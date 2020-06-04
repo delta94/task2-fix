@@ -47,7 +47,7 @@ section.carousel {
             a {
                 display: flex;
                 width: 210px;
-                height: 60px;
+                min-height: 60px;
                 border-radius: 30px;
                 background-color: #fff;
                 font-size: 18px;
@@ -55,6 +55,7 @@ section.carousel {
                 align-items: center;
                 text-decoration: none;
                 cursor: pointer;
+                line-height: 60px;
 
                 span {}
             }
@@ -64,7 +65,7 @@ section.carousel {
 
     .carousel-mask {
         position: absolute;
-        bottom: 95px;
+        bottom: 114px;
         right: 50%;
         height: 51px;
         transform: translateX(50%);

@@ -1,0 +1,16 @@
+section.about-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    img.bgImg {
+        width:100%;
+        position: absolute;
+        z-index: -1;
+        bottom: -265px;
+    }
+
+    .about-section {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}

@@ -104,10 +104,10 @@ const config = {
         ]),
         new HtmlWebPackPlugin({
             template: 'src/index.pug',
-            favicon: './public/icon.ico',
+            favicon: './public/favicons.png',
             filename: 'index.html'
         }),
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('css/styles.css')
     ]
 };
 

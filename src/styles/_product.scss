@@ -1,0 +1,123 @@
+section.product-carousel {
+    padding: 60px 0;
+    overflow: hidden;
+
+    .container {
+        max-width: 1120px;
+        margin: 0 auto;
+
+        .product-carousel-title {
+            
+            h2 {
+                font-weight: bold;
+                font-size: 24px;
+                color: #1f1f1f;
+                padding-left: 18px;
+                position: relative;
+                margin-bottom: 25px;
+
+                &::before {
+                    content: '';
+                    left: 0px;
+                    top: 50%;
+                    position: absolute;
+                    height: 2px;
+                    width: 8px;
+                    transform: translateY(-2px);
+                    background-color: #044c99;
+                }
+    
+                &::after {
+                    content: '';
+                    left: 0px;
+                    position: absolute;
+                    bottom: 50%;
+                    height: 2px;
+                    width: 8px;
+                    -webkit-transform: translateY(2px);
+                    transform: translateY(2px);
+                    background-color: #23adaa;
+                }
+            }
+        }
+
+        .product-carousel-wrapper {
+            .btn-arrow-left {
+                left: -35px;
+            }
+
+            .btn-arrow-right {
+                right: -25px;
+            }
+
+            .btn-arrow {
+                position: absolute;
+                top: 50%;
+                z-index: 1;
+                font-size: 45px;
+                color: #044c99;
+            }
+
+            .product-carousel-mg {
+                position: relative;
+                background-color: #fff;
+                margin-right: 20px;
+                width: 260px!important;
+
+                .product-carousel-item {
+                    margin-top: 15px;
+                    margin-left: 10px;
+                    border: 1px solid #cfd2db;
+                    border-radius: 5px;
+    
+                    .product-img {
+                        margin-top: 12px;
+    
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+    
+                    .product-description {
+                        text-align: center;
+                        margin-bottom: 25px;
+
+                        p {
+                            font-size: 14px;
+                            padding-bottom: 15px;
+
+                            span {
+                                color: #f13576;
+                            }
+                        }
+    
+                        h3 {
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+    
+                    a.product-badge {
+                        position: absolute;
+                        background-color: #23adaa;
+                        padding: 10px 15px;
+                        font-size: 14px;
+                        border-radius: 20px;
+                        top: 0;
+                        left: 0;
+                        color: #fff;
+                        font-weight: bold;
+                        text-decoration: none;
+
+                        i {
+                            padding-right: 4px;
+                        }
+                    }
+                }
+            }
+
+        }
+        
+    }
+}

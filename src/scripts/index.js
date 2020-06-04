@@ -1,5 +1,6 @@
 import './../styles/main.scss';
 import './slick/slick';
+require("./fontawesome.min.js");
 // import Parallax from 'parallax-scroll';
 // require('./scroll.js');
 
@@ -32,3 +33,16 @@ $('.carousel-wrapper').slick({
     // speed: 2000,
     arrows: false
 });
+
+$('.product-carousel-wrapper').slick({
+    prevArrow: '<a href="#prevArrow" class="btn-arrow btn-arrow-left"><i class="fas fa-chevron-left"></i></a>',
+	nextArrow:'<a href="#nextArrow" class="btn-arrow btn-arrow-right"><i class="fas fa-chevron-right"></i></a>',
+    dots: true,
+	infinite: true,
+	slidesToShow: 4,
+	slidesToScroll: 4,
+	autoplay: false,
+	autoplaySpeed: 2000,
+});
+
+
