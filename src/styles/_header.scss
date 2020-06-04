@@ -19,7 +19,7 @@
 
     .switch-btn {
         display: inline-block;
-        @include flex(center,center);
+        @include flex(center, center);
 
         input {
             display: none;
@@ -65,10 +65,12 @@
 
 
 header {
-    nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
 
-        &:sticky {}
-    }
+    nav {}
 
     .flex-wrapper {
         @include flex(space-between, center);

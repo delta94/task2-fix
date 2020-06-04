@@ -7,7 +7,7 @@ section.product-carousel {
         margin: 0 auto;
 
         .product-carousel-title {
-            
+
             h2 {
                 font-weight: bold;
                 font-size: 24px;
@@ -26,7 +26,7 @@ section.product-carousel {
                     transform: translateY(-2px);
                     background-color: #044c99;
                 }
-    
+
                 &::after {
                     content: '';
                     left: 0px;
@@ -62,23 +62,45 @@ section.product-carousel {
                 position: relative;
                 background-color: #fff;
                 margin-right: 20px;
-                width: 260px!important;
+                width: 260px !important;
+                overflow: hidden;
 
                 .product-carousel-item {
                     margin-top: 15px;
                     margin-left: 10px;
                     border: 1px solid #cfd2db;
                     border-radius: 5px;
-    
+
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 2;
+                        display: block;
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        background: rgba(255, 255, 255, .4);
+                        border-radius: 100%;
+                        -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                    }
+
+                    &:hover::before {
+                        -webkit-animation: circle .75s;
+                        animation: circle .75s;
+                    }
+
                     .product-img {
                         margin-top: 12px;
-    
+
                         img {
                             display: block;
                             width: 100%;
                         }
                     }
-    
+
                     .product-description {
                         text-align: center;
                         margin-bottom: 25px;
@@ -91,13 +113,13 @@ section.product-carousel {
                                 color: #f13576;
                             }
                         }
-    
+
                         h3 {
                             font-size: 20px;
                             font-weight: bold;
                         }
                     }
-    
+
                     a.product-badge {
                         position: absolute;
                         background-color: #23adaa;
@@ -118,6 +140,38 @@ section.product-carousel {
             }
 
         }
-        
+
+    }
+}
+
+@-webkit-keyframes circle {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+@keyframes circle {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
     }
 }
