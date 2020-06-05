@@ -15,6 +15,7 @@ section.product-carousel {
                 padding-left: 18px;
                 position: relative;
                 margin-bottom: 25px;
+                text-align: center;
 
                 &::before {
                     content: '';
@@ -25,6 +26,9 @@ section.product-carousel {
                     width: 8px;
                     transform: translateY(-2px);
                     background-color: #044c99;
+                    @include breakpoint(custom,1200px) {
+                        display: none;
+                    }
                 }
 
                 &::after {
@@ -37,6 +41,9 @@ section.product-carousel {
                     -webkit-transform: translateY(2px);
                     transform: translateY(2px);
                     background-color: #23adaa;
+                    @include breakpoint(custom,1200px) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -64,6 +71,14 @@ section.product-carousel {
                 margin-right: 20px;
                 width: 260px !important;
                 overflow: hidden;
+                @include breakpoint(custom, 600px) {
+                    margin: 0 auto;
+                    display: block!important;
+                }
+                @include breakpoint(custom, 800px) {
+                    margin: 0 auto;
+                    display: block!important;
+                }
 
                 .product-carousel-item {
                     margin-top: 15px;

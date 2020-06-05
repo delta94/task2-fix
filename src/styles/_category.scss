@@ -9,6 +9,13 @@ section.category {
         .category-title {
             @include flex(space-between, center);
             margin-bottom: 20px;
+            @include breakpoint(custom,1200px) {
+                width: 90%;
+                margin: 25px auto;
+            }
+            @include breakpoint(custom,360px) {
+                flex-direction: column;
+            }
 
             h2 {
                 font-weight: bold;
@@ -16,6 +23,9 @@ section.category {
                 color: #1f1f1f;
                 padding-left: 18px;
                 position: relative;
+                @include breakpoint(custom,360px) {
+                    margin-bottom: 10px;
+                }
 
                 &::before {
                     content: '';
@@ -48,20 +58,39 @@ section.category {
                 border: 1px solid #ccc;
                 border-radius: 25px;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: $dark;
+                    color: #fff;
+                    transition: all .3s;
+                }
             }
         }
 
         .category-product-wrapper {
 
             .category-tab-wrapper {
+                @include breakpoint(mobileonly) {
+                    flex-direction: column;
+                }
                 @include flex(flex-start, center);
                 position: relative;
                 z-index: 1;
 
                 .category-tab-item {
-
+                    @include breakpoint(mobileonly) {
+                        width: 100%;
+                    }
+                    &:hover:not(:first-child) {
+                        opacity: 0.6;
+                    }
 
                     a {
+                        @include breakpoint(mobileonly) {
+                            border-top-right-radius: 0;
+                            border-top-left-radius: 0;
+                            text-align: center;
+                        }
                         display: block;
                         background-color: #044c99;
                         color: #fff;
@@ -75,9 +104,7 @@ section.category {
                         text-decoration: none;
                         cursor: pointer;
 
-                        &:not(:first-child):hover {
-                            opacity: 0.7;
-                        }
+                        
 
                         &.active {
                             background-color: #fff;
@@ -92,6 +119,15 @@ section.category {
             .category-product {
                 position: relative;
                 min-height: 520px;
+                @include breakpoint(mobileonly) {
+                    min-height: 550px;
+                }
+                @include breakpoint(custom,600px) {
+                    min-height: 660px;
+                }
+                @include breakpoint(custom,550px) {
+                    min-height: 1408px;
+                }
 
                 .category-product-content {
                     border: 1px solid #cfd2db;
@@ -117,8 +153,17 @@ section.category {
                     .category-product-options {
                         @include flex(space-between, center, $wrap:wrap);
                         margin-top: 20px;
+                        @include breakpoint(custom,550px) {
+                            flex-direction: column;
+                        }
 
                         a {
+                            @include breakpoint(mobileonly) {
+                                width: calc((100% - 60px)/3);
+                            }
+                            @include breakpoint(custom,550px) {
+                                width: 100%;
+                            }
                             @include flex(center, center);
                             background-color: #f5f6f8;
                             padding: 15px;
@@ -131,6 +176,11 @@ section.category {
                             font-weight: bold;
                             text-decoration: none;
                             color: $black;
+
+                            &:hover {
+                                opacity: 0.8;
+                                transition: .3s all;
+                            }
 
                             &.active {
                                 background-color: #044c99;
@@ -165,8 +215,31 @@ section.category {
 
                     .category-product-show {
                         @include flex(space-between, center, $direction: row, $wrap: wrap);
+                        // @include breakpoint(mobileonly) {
+                        //     @include flex(flex-start, center, $direction: row);
+                        // }
+                        @include breakpoint(custom,550px) {
+                            flex-direction: column;
+                        }
 
                         .category-product-item {
+                            
+                            @include breakpoint(mobileonly) {
+                                width: calc((100% - 60px)/3);
+                                // &:not(:nth-child(2n+1)) {
+                                //     margin-right: 30px;
+                                // }
+                                // &:first-child {
+                                //     margin-right: 30px;
+                                // }
+                            }
+                            @include breakpoint(custom,600px) {
+                                // @include flex(space-between, center, $direction: row);
+                                width: calc((100% - 60px)/2);
+                            }
+                            @include breakpoint(custom,550px) {
+                                width: 100%;
+                            }
                             @include flex(space-between, center);
                             width: calc((100% - 60px) / 4);
                             border-bottom: 2px solid #d2d2d2;

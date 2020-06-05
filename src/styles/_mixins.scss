@@ -144,3 +144,25 @@
 		color: $color;
 	}
 }
+
+
+@mixin breakpoint($point,$width:null) {
+	@if $point == desktop {
+	  @media (max-width: 70em) { @content ; }
+   }
+	@else if $point == laptop {
+	  @media (max-width: 64em) { @content ; }
+   }
+	 @else if $point == tablet {
+	  @media (max-width: 50em) { @content ; }
+   }
+	@else if $point == phablet {
+	  @media (min-width: 37.5em)  { @content ; }
+   }
+   @else if $point == mobileonly {
+	  @media (max-width: 48em)  { @content ; }
+   }
+   @else if $point == custom {
+	@media (max-width: $width)  { @content ; }
+ }
+ }

@@ -75,6 +75,10 @@ header {
     .flex-wrapper {
         @include flex(space-between, center);
         @include set-max-width;
+        @include breakpoint(custom,1200px) {
+            max-width:700px;
+        };
+
         padding-top: 25px;
         padding-bottom: 25px;
 
@@ -128,8 +132,18 @@ header {
     ul.menu.bottom {
         @include set-max-width;
         @include flex(flex-start, center, $direction: row);
+        @include breakpoint(custom,1200px) {
+            @include flex(center, center, $direction: row);
+        };
+        @include breakpoint(mobileonly) {
+            display: none;
+        }
 
         li {
+            @include breakpoint(custom,1200px) {
+                padding-right: 20px;
+                padding-left: 20px;
+            };
             padding-right: 42px;
             padding-left: 42px;
             margin-top: 20px;
@@ -152,6 +166,10 @@ header {
 
 
 .menu-wrapper {
+    @include breakpoint(mobileonly) {
+        display: none;
+    }
+
     .top {}
 
     li {}

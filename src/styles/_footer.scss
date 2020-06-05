@@ -2,14 +2,29 @@ footer {
     background-color: #fff;
 
     section.subfooter {
+        @include breakpoint(custom,1120px) {
+            padding: 40px 20px;
+        }
         padding: 40px 0;
         
         .container {
             @include flex(space-between,center);
             max-width: 1120px;
             margin: 0 auto;
+            @include breakpoint(custom,1120px) {
+                flex-direction: column;
+                @include flex(center,center);
+                text-align: center;
+                margin:0;
+            }
 
             .subfooter-box {
+                @include breakpoint(custom,1120px) {
+                    margin:0!important;
+                    &:not(:last-child) {
+                        margin-bottom: 20px!important;
+                    }
+                }
                 width: 100%;
                 min-height: 60px;
                 background-color: #e5e5e5;
@@ -27,9 +42,13 @@ footer {
         padding: 25px 0;
 
         .container {
-            @include flex(space-between,center);
             max-width: 1120px;
             margin: 0 auto;
+            @include flex(space-between,center);
+            @include breakpoint(custom,1120px) {
+                flex-direction: column;
+                text-align: center
+            }
 
             .link {
                 width: 100%;
@@ -45,6 +64,9 @@ footer {
                 text-align: right;
 
                 p {
+                    @include breakpoint(custom,1120px) {
+                        text-align: center
+                    }
                     font-size: 12px;
                     color: #000;
                 }

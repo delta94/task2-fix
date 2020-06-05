@@ -25,12 +25,12 @@ require("./fontawesome.min.js");
 // };
 
 $('.carousel-wrapper').slick({
-	// infinite: true,
+	infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplaySpeed: 2000,
-    autoplay: false,
-    // speed: 2000,
+    autoplaySpeed: 2000,
+    autoplay: true,
+    speed: 2000,
     arrows: false
 });
 
@@ -42,7 +42,43 @@ $('.product-carousel-wrapper').slick({
 	slidesToShow: 4,
 	slidesToScroll: 4,
 	autoplay: false,
-	autoplaySpeed: 2000,
+    autoplaySpeed: 2000,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots:false
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots:false
+            }
+        }
+    ]
 });
 
 

@@ -15,6 +15,10 @@ section.about-wrapper {
     }
 
     .about-section {
+        @include breakpoint(custom,1080px) {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
         margin-top: 60px;
         margin-bottom: 60px;
 
@@ -33,8 +37,15 @@ section.about-wrapper {
 
             .about-content {
                 @include flex(space-between, center);
+                @include breakpoint(custom,1080px) {
+                    flex-direction: column;
+                }
 
                 .about-left {
+                    @include breakpoint(custom,1080px) {
+                        @include flex(center, center,$direction:column);
+                        margin-bottom: 30px;
+                    }
                     width: 100%;
 
                     p {
@@ -65,8 +76,14 @@ section.about-wrapper {
 
                 .about-right {
                     @include flex(space-between, center);
+                    @include breakpoint(custom,555px) {
+                        @include flex(center, center,$direction:column);
+                    }
 
                     .about-catalog {
+                        @include breakpoint(custom,555px) {
+                            margin-bottom: 30px;
+                        }
                         &:first-child {
                             margin-right: 20px;
                         }
