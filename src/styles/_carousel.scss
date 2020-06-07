@@ -1,32 +1,147 @@
 section.carousel {
     width: 100%;
     position: relative;
-    z-index: 0;
     padding-bottom: 95px;
     overflow: hidden;
+
+    .carousel-slider {
+        @include breakpoint(custom, 1200px) {
+            max-width: 855px;
+        }
+
+        @include breakpoint(laptop) {
+            max-width: 578px;
+            top: 65%
+        }
+
+        @include breakpoint(mobileonly) {
+            max-width: 285px;
+            top: 70%;
+        }
+
+        @include breakpoint(custom, 320px) {
+            max-width: 285px;
+            top: 50%;
+        }
+
+        max-width: 1140px;
+        margin: 0 auto;
+        z-index: 3;
+        position: absolute;
+        top: 72%;
+        left: 50%;
+        transform: translate(-50%);
+
+
+        .slick-slide {
+            margin: 0px 10px;
+        }
+
+        &-child.slider1 {
+            width: 265px;
+            height: 100px;
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            z-index: 0;
+
+            .carousel-img-border {
+                @include flex(center, center);
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                margin: 0px;
+                border-radius: 10px;
+
+                img {
+                    position: relative;
+                    right: 4px;
+                    height: 125%;
+                }
+            }
+
+            .carousel-img-content {
+                @include flex(space-between, center, $direction:row);
+                top: 5px;
+                right: 5px;
+                bottom: 5px;
+                left: 5px;
+                position: absolute;
+                border-radius: 6px;
+                background-color: #fff;
+
+                .img-content-text {
+                    @include flex(center, center, $direction: column);
+                    position: relative;
+                    width: 100%;
+                    text-align: right;
+
+                    .content-text1 {
+                        @include flex(flex-end, center, $wrap:nowrap, $direction:row);
+                        margin-bottom: 5px;
+                        width: 100%;
+
+                        span {
+                            font-size: 14px;
+                            margin-right: 8px;
+                        }
+
+                        img {
+                            &:nth-last-of-type(1) {
+                                height: 21px;
+                                position: relative;
+                                top: -10px;
+                            }
+
+                            &:nth-last-of-type(2) {
+                                height: 13px;
+                                position: relative;
+                                top: 0px;
+                            }
+                        }
+                    }
+
+                    .content-text2 {}
+                }
+
+                img {
+                    height: 66px;
+                    margin: 0px 5px 0px 12px;
+                }
+            }
+        }
+    }
 
     .carousel-main {
         position: relative;
 
         // @include flex(center, center,$direction:column);
         .carousel-wrapper {
-            @include breakpoint(custom,1200px) {
+            @include breakpoint(custom, 1200px) {
                 height: 64vw;
-            };
+            }
+
+            ;
+
             @include breakpoint(mobileonly) {
                 height: 65vw;
-            };
+            }
+
+            ;
             width: 100%;
             height: 680px;
 
 
             .carousel-banner {
+
                 // @include breakpoint(custom,1200px) {
                 //     height: 64vw;
                 // };
                 @include breakpoint(mobileonly) {
                     height: 70vw;
-                };
+                }
+
+                ;
                 background-image: url(../images/img_banner.png);
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -49,36 +164,48 @@ section.carousel {
 
 
             p.title {
-                @include breakpoint(custom,1200px) {
+                @include breakpoint(custom, 1200px) {
                     font-size: 14px;
-                };
+                }
+
+                ;
+
                 @include breakpoint(mobileonly) {
                     font-size: 12px;
-                };
+                }
+
+                ;
                 font-size: 16px;
             }
 
             p.subtitle {
-                @include breakpoint(custom,1200px) {
+                @include breakpoint(custom, 1200px) {
                     font-size: 32px;
-                };
+                }
+
+                ;
+
                 @include breakpoint(mobileonly) {
                     font-size: 4vw;
                     margin-top: 3.5vw;
-                };
+                }
+
+                ;
                 font-size: 42px;
                 margin-top: 32px;
             }
 
             a {
-                @include breakpoint(custom,320px) {
+                @include breakpoint(custom, 320px) {
                     width: 62vw;
                     height: 40px;
                     font-size: 10px;
                     min-height: 40px;
                     line-height: 40px;
                     margin: 5vw auto 0px;
-                };
+                }
+
+                ;
                 position: relative;
                 display: flex;
                 width: 210px;
@@ -105,11 +232,14 @@ section.carousel {
                     border-right: 3px solid $black;
                     transform: rotate(45deg) translate(0, -50%);
                     transition: 0.3s ease-in-out;
-                    @include breakpoint(custom,320px) {
+
+                    @include breakpoint(custom, 320px) {
                         width: 5px;
                         height: 5px;
                         right: 20px;
-                    };
+                    }
+
+                    ;
                 }
 
                 &:hover {
@@ -140,7 +270,9 @@ section.carousel {
         @include breakpoint(mobileonly) {
             position: relative;
             // transform: scale(1.5);
-        };
+        }
+
+        ;
 
         img {
             @include breakpoint(mobileonly) {
@@ -151,7 +283,8 @@ section.carousel {
                 transform: translate(-50%);
                 top: 100px;
             }
-            @include breakpoint(custom,320px) {
+
+            @include breakpoint(custom, 320px) {
                 height: 52px;
                 top: 100px;
             }
